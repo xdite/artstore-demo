@@ -13,7 +13,11 @@ class Admin::ProductsController < ApplicationController
       render :new
     end
   end
- 
+
+  def index
+    @products = Product.all
+  end
+
   private
  
   def product_params
