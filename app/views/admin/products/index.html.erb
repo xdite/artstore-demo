@@ -7,11 +7,20 @@
 <h2> Product List </h2>
  
 
-<ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td> <%= product.id %>
+      <td> <%= link_to(product.title, admin_product_path(product)) %> </td>
+    </tr>
+    <% end %>
 
-<% @products.each do |product| %>
-
-  <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
-<% end %>
-
-</ul>
+  </tbody>
+</table>
